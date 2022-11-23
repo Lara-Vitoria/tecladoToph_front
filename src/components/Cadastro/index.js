@@ -11,7 +11,7 @@ import styles from './style';
 import Logo from '../Logo';
 import Footer from "../Footer";
 
-const API_URL = 'http://192.168.0.101:3000/v1';
+const API_URL = 'http://192.168.29.112:3000/v1';
 
 function input(placeholder, change) {
     return (

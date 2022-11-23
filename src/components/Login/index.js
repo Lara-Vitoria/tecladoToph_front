@@ -12,7 +12,7 @@ import Svg, { Path } from 'react-native-svg';
 import styles from './style';
 import Logo from '../Logo';
 
-const API_URL = 'http://192.168.0.101:3000/v1';
+const API_URL = 'http://192.168.29.112:3000/v1';
 
 function detalhe(props) {
     return (
@@ -83,14 +83,16 @@ const  Login = (props) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(dados)
-        }).then(res => {
+        }).then( async res => {
+            const content = await res.json();
+            console.log(content);
             try {
                 if (res.status !== 201) {
                     setIsError(true);
                     setMessage('Erro ao realizar ao logar');
                     setModalVisible(true)
                 } else {
-                    props.navigation.navigate('Main');
+                    props.navigation.navigate('Main', {id: content});
                 }
                 
             } catch (err) {

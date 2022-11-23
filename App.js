@@ -59,9 +59,9 @@ const AppNavigator = createStackNavigator({
   Guia: {
     screen: Guia,
     navigationOptions:{
-      title: '',
+      title: 'Como escrever em Braille',
       headerStyle: {
-        backgroundColor: "#20ca26"
+        backgroundColor: "#20ca26",
       },
       headerTintColor: '#fff',
     }
